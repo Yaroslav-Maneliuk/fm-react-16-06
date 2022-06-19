@@ -4,7 +4,7 @@ import React from "react";
 import Chao from "./components/Chao";
 
 function App() {
-  return <Chao />;
+  return <Chao name="Elon Musk"/>;
 }
 
 export default App;
