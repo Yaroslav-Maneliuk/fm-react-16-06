@@ -7,13 +7,21 @@ import { Component } from "react";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { user: { fullName: "Elon Musk" } };
+    this.state = {
+      users: [
+        { id: 1, fname: "Elon" },
+        { id: 2, fname: "Rob" },
+        { id: 3, fname: "Tom" },
+        { id: 4, fname: "Alex" },
+        { id: 5, fname: "Max" },
+      ],
+    };
   }
   render() {
-    const { user } = this.state;
+    const { users } = this.state;
     return (
       <>
-        <Chao name={user.fullName} />
+        <Chao name={users.fname} />
         <Chao name="Elen Musk" />
         <Chao name="Rob Bob" />
       </>
