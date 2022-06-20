@@ -10,17 +10,21 @@ class Chao extends Component {
     this.setState({ isHi: !isHi });
   };
   render() {
-    const { name } = this.props;
+    const { name, id } = this.props;
     const { isHi } = this.state;
     if (isHi) {
       return (
         <>
-          <h2>Hi! {name}!</h2>
+          <h2>{id})Hi! {name}!</h2>
           <button onClick={this.switchState}>Switch</button>
         </>
       );
     }
-    return <h2>"Bye", {name}!</h2>;
+    return (
+      <p>
+        {id}) Bye, {name}!
+      </p>
+    );
   }
 }
 
