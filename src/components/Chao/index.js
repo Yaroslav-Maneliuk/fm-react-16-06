@@ -2,11 +2,11 @@ import { Component } from "react";
 
 class Chao extends Component {
   render() {
-    const { name, photo } = this.props;
+    const { name, isHi } = this.props;
+    const wordHi = isHi ? "Hi" : "Bye"; 
     return (
       <>
-        <h2>Hi! {name}!</h2>
-        <img src={photo} alt={name}/>
+        <h2>{wordHi}! {name}!</h2>
       </>
     );
   }
