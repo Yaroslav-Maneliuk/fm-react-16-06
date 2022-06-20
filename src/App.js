@@ -18,7 +18,23 @@ class App extends Component {
       ],
     };
   }
-  sortUsers = () => {
+  sortUsersByName = () => {
+    const { users, isStraightSortName } = this.state;
+    const copyUsers = JSON.parse(JSON.stringify(users));
+    copyUsers.sort((prev, next) => {
+      if (prev.fname < next.fname) {
+        return isStraightSortName ? 1 : -1;
+      }
+      if (prev.fname > next.fname) {
+        return isStraightSortName ? -1 : 1;
+      }
+    });
+    this.setState({
+      users: copyUsers,
+      isStraightSortName: !isStraightSortName,
+    });
+  };
+  sortUsersById = () => {
     const { users, isStraightSortId } = this.state;
     const copyUsers = JSON.parse(JSON.stringify(users));
     copyUsers.sort((prev, next) => {
@@ -27,10 +43,17 @@ class App extends Component {
     this.setState({ users: copyUsers, isStraightSortId: !isStraightSortId });
   };
   render() {
-    const { users, isStraightSortId: isUp } = this.state;
+    const {
+      users,
+      isStraightSortId: isUp,
+      isStraightSortId: isAlpha,
+    } = this.state;
     return (
       <>
-        <button onClick={this.sortUsers}>
+        <button onClick={this.sortUsersByName}>
+          sort by name {isAlpha ? "Up" : "Down"}
+        </button>
+        <button onClick={this.sortUsersById}>
           sort by id {isUp ? "Up" : "Down"}
         </button>
         {users.map(({ id, fname }) => (
