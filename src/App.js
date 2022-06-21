@@ -25,7 +25,7 @@ class App extends Component {
     const { users } = this.state;
     return <>
       <SelectedUsers users={users} />
-      <UserList users={users} setUserSelector={this.setUserSelector}/>
+      <UserList users={users} setUserSelector={this.setUserSelector}/> 
     </>;
   }
 }
