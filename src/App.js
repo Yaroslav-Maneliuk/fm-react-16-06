@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       isStraightSortId: true,
+      isStraightSortName: true,
       users: [
         { id: 3, fname: "Elon" },
         { id: 2, fname: "Rob" },
@@ -20,7 +21,8 @@ class App extends Component {
   }
   sortUsersByName = () => {
     const { users, isStraightSortName } = this.state;
-    const copyUsers = JSON.parse(JSON.stringify(users));
+    const copyUsers = [...users];
+    // const copyUsers = JSON.parse(JSON.stringify(users));
     copyUsers.sort((prev, next) => {
       if (prev.fname < next.fname) {
         return isStraightSortName ? 1 : -1;
