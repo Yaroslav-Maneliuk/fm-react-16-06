@@ -15,7 +15,9 @@ class Chao extends Component {
     if (isHi) {
       return (
         <>
-          <h2>{id})Hi! {name}!</h2>
+          <h2>
+            {id})Hi! {name}!
+          </h2>
           <button onClick={this.switchState}>Switch</button>
         </>
       );
