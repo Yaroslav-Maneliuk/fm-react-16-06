@@ -1,7 +1,7 @@
 import "./App.css";
 import React, {Component} from "react";
-import UserList from "./components/UserList";
-import SelectedUsers from "./components/SelectedUsers";
+import UserList from "./components/UserSection/UserList";
+import SelectedUsers from "./components/UserSection/SelectedUsers";
 
 const userDB = [
   { id: 1, fname: "Elon" },
